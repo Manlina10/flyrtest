@@ -1,0 +1,62 @@
+<!-- Header Container -->
+<header class="header">
+    <div class="header__container">
+        <!-- Hamburger menu icon created with span to give it the effect of movement when the menu is opened -->
+        <div class="header__hamburguer" (click)="toggleMenu()" [class.open]="isMenuOpen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>        
+        <div class="header__nav">
+            <!-- Logo -->
+            <a href="https://www.google.com/">
+                <img src="../../assets/airline-logo.svg" alt="Airline Logo" class="header__nav-logo">
+            </a>
+            <!-- Main menu -->
+            <nav class="header__nav-menu" [class.open]="isMenuOpen" [class.active]="isMenuItemOpen">
+                <ul class="header__nav-menu-items">
+                    <!-- Item -->
+                    <li class="header__nav-menu-item">
+                        <a href="https://www.google.com/">Check-in</a>
+                    </li>
+                    <!-- Item -->
+                    <li class="header__nav-menu-item">Main menu
+                        <a href="https://www.google.com/">Manage my booking</a>
+                    </li>
+                    <!-- Item -->
+                    <li class="header__nav-menu-item" (click)="toggleMenuItem()" [class.active]="isMenuItemOpen">
+                        <a href="javascript:void(0)">Information</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><style>.cls-1{stroke:#FFF;stroke-miterlimit:42.67;stroke-width:0px;}</style></defs><g id="SVGRepo_iconCarrier" data-name="SVGRepo iconCarrier"><path class="cls-1" d="M256,256H0L128,0Z"/></g></svg>
+                        <!-- Submenu -->
+                        <ul class="header__nav-menu-dropdown">
+                            <span>Information</span>
+                            <!-- subitem -->
+                            <li>
+                                <a href="https://www.google.com/">Help center</a>
+                            </li>
+                            <!-- subitem -->
+                            <li>
+                                <a href="https://www.google.com/">Flight state</a>
+                            </li>
+                            <!-- subitem -->
+                            <li>
+                                <a href="https://www.google.com/">Airplanes</a>
+                            </li>
+                            <!-- subitem -->
+                            <li>
+                                <a href="https://www.google.com/">Routes</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>            
+        </div>  
+        <!-- Language link -->      
+        <div class="header__language">
+            <a href="https://www.google.com/">
+                <img src="../../assets/language.svg" alt="Logo of the world">
+                <span>English</span>
+            </a>
+        </div>
+    </div>  
+</header>

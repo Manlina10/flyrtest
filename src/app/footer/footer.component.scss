@@ -1,0 +1,174 @@
+$primary-color: #181823;
+
+.footer {
+
+    &__links-container {
+        padding: 57px 14px 31px;
+        background-color: #E7E6F6;
+    }
+
+    @media (max-width:1000px) {
+        &__links-container {
+            padding: 36px 14px 49px;            
+        }
+    }
+
+    &__links {
+        max-width: 1248px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width:1000px) {
+            &-logo {
+                width: 180px;
+                height: auto;
+            }
+        }        
+
+        &-items {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            color: $primary-color;
+
+            &-columns {
+                display: flex;
+            }
+
+            @media (max-width:650px) {
+                &-columns {
+                    flex-direction: column;
+                    gap: 36px;
+                }
+            }
+
+            &-column {
+                h3 {
+                    color: inherit;
+                    font-size: 20px;
+                    font-weight: 700;
+                    line-height: 23.44px;
+                }
+
+                @media (max-width:600px) {
+                    h3 {
+                        font-size: 18px;
+                        line-height: 21.09px;
+                    }
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 20px 0 0 10px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+
+                    a {
+                        color: inherit;
+                        font-size: 18px;
+                        font-weight: 400;
+                        line-height: 21.09px;
+                    }
+
+                    @media (max-width:600px) {
+                        a {
+                            font-size: 16px;
+                            line-height: 18.75px;
+                        }
+                    }
+                }
+
+                &:nth-child(1) {
+                    margin-right: 98px;
+                }
+
+                &:nth-child(2) {
+                    margin-right: 53px;
+                }
+
+                &:nth-child(3) {
+                    margin-right: 48px;
+                }
+
+                @media (max-width:650px) {
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        @media (max-width:1000px) {
+           &-items {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                gap: 68px;
+            }
+        }
+
+        &-items-social-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &-items-social {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            span {
+                color: $primary-color;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 21.09px;
+            }
+
+            &-icons {
+                display: flex;
+                gap: 16px;
+            }
+        }
+    }
+
+    @media (max-width:1000px) {
+        &__links {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 64px;
+        }
+    }
+
+    &__contact-container {
+        padding: 16px 14px;
+        background-color: #F1F0FF;
+    }
+
+    &__contact {
+        max-width: 1248px;
+        margin: 0 auto;
+
+        &-links {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            flex-wrap: wrap;
+
+            li:not(:last-child) {
+                border-right: 1px solid #9292A0;
+                padding-right: 10px;
+            }
+
+            a {
+                color: #9292A0;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 16.41px;
+            }
+        }
+    }
+}

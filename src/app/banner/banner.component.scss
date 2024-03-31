@@ -1,0 +1,71 @@
+$tertiary-color: #C20114;
+
+/* Background image configuration */
+.banner {
+    padding: 122px 14px 131px;
+    background-image: url('../../assets/banner-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    /* Adjust the content to a maximum width equal to 1248px and at the same time it is centered. */
+    &__content {
+        max-width: 1248px;
+        margin: 0 auto;
+        color: #FFFFFF;
+
+        &-title {
+            color: inherit;
+            font-size: 58px;
+            font-weight: 700;
+            line-height: 67.97px;
+        }        
+
+        &-description {
+            color: inherit;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 23.44px;
+            margin: 6px 0 36px;
+            max-width: 564px;
+        }        
+
+        &-button {
+            width: 152px;
+            height: 38px;
+            border-radius: 100px;
+            border: 0;
+            cursor: pointer;
+            background-color: $tertiary-color;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 18.75px;
+        }
+
+        /* breackpoint for font adjustment in mobile version */
+        @media (max-width:950px) {
+            &-title {
+                font-size: 32px;
+                line-height: 37.5px;
+            }
+
+            &-description {
+                font-size: 14px;
+                line-height: 16.41px;
+            }
+
+            &-button {
+                font-size: 18px;
+                line-height: 21.09px;
+            }
+        }
+    }
+}
+
+@media (max-width:950px) {
+    .banner {
+        background-size: auto;
+        background-position: 45% 26%;
+    }
+}

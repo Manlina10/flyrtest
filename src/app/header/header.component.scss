@@ -1,0 +1,273 @@
+$primary-color: #181823;
+
+.header {
+    position: relative;
+    padding: 15px 14px 16px;
+
+    &__container {
+        max-width: 1248px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        line-height: 0;
+
+        &-menu {
+            display: inherit;
+
+            &-items {
+                display: inherit;
+                gap: 28px;
+                list-style: none;
+
+                a {
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 18.75px;
+                    color: #000000;
+                    cursor: pointer;
+                }
+            }
+
+            &-item {
+                position: relative;
+
+                svg {
+                    display: none;
+                    position: absolute;
+                    width: 30px;
+                    height: auto;
+                    left: 28px;
+                    top: 35px;
+                    fill: #FFFFFF;
+                    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));                  
+                }
+
+                @media (min-width:800px) {
+                    &.active {
+                        svg {
+                            display: block;
+                        }
+    
+                        .header__nav-menu-dropdown {
+                            display: flex;
+                        }
+                    }
+                }                
+            }
+
+            @media (min-width:801px) {
+                &-item {
+                    .header__nav-menu-dropdown {
+                        span {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width:800px) {
+                &-item {
+                    position: inherit;
+
+                    .header__nav-menu-dropdown {
+                        display: flex;
+                        gap: 20px;
+                        position: absolute;
+                        transform: translateX(-100%);
+                        top: 0;
+                        left: 0;
+                        filter: none;
+                        width: 100%;
+                        background-color: #FFFFFF;
+                        height: 100vh;
+                        z-index: 1;
+                        transition: all 0.3s ease;
+                        padding: 50px 14px;
+
+                        span {
+                            font-size: 20px;
+                            font-weight: 700;
+                            line-height: 23.44px;
+                            color: $primary-color;
+                            padding-bottom: 5px;
+                        }
+
+                        li {
+                            padding: 0 28px 0 !important;  
+                            border: none !important;     
+                            
+                            a {
+                                color: $primary-color !important;
+                                font-size: 16px !important;
+                                font-weight: 400 !important;
+                                line-height: 18.75px !important;
+                            }
+                        }
+                    }
+
+                    // Show dropdown on click
+                    &.active {
+                        ul {
+                            transform: translateX(0);                        
+                        }
+                    }
+                }
+
+            }
+
+            &-dropdown {
+                display: none;
+                flex-direction: column;
+                gap: 13px;
+                padding: 28px 30px;
+                min-width: 200px;
+                background-color: #FFFFFF;
+                border-radius: 20px;
+                list-style: none;
+                position: absolute;
+                left: -90px;
+                top: 52px;
+                filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+
+                a {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 18.75px;
+                    color: $primary-color;
+                }
+            }
+
+
+        }
+
+        @media (max-width:800px) {
+
+            &-menu {
+                position: absolute;
+                transform: translateX(-100%);
+                top: 99%;
+                left: 0;
+                width: 100%;
+                background-color: #FFFFFF;
+                height: 100vh;
+                z-index: 1;
+                transition: all .3s ease;
+
+                .header__nav-menu-items {
+                    width: 100%;
+                    flex-direction: column;
+                    padding: 25px 14px 0;
+                    gap: 0;
+
+                    li {
+                        padding: 25px 0;
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid #B2B2C1;
+                        }
+
+                        a {
+                            font-size: 20px;
+                            font-weight: 400;
+                            line-height: 23.44px;
+                        }
+                    }
+                }
+
+                // Display the main menu on click
+                &.open {
+                    display: flex;  
+                    transform: translateX(0);                      
+                }
+            }
+        }
+
+        @media (min-width:801px) {
+            &-menu--mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width:750px) {
+            &-logo {
+                width: 103px;
+                height: auto;
+            }
+        }        
+    }
+
+    &__language a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        span {
+            font-weight: 400;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        @media (max-width:800px) {
+            span {
+                display: none;
+            }
+        }
+    }    
+
+    &__hamburguer {
+        display: block;
+        position: relative;
+
+        span {
+            width: 18px;
+            height: 2px;
+            background-color: #000000;
+            position: absolute;
+            transition: all .3s ease;
+
+            &:nth-child(1) {
+                top: 6px;
+            }
+
+            &:nth-child(3) {
+                top: -6px;
+            }
+        }
+
+        // Effect of the hamburger menu icon
+        &.open {
+            span:nth-child(1) {
+                transform: rotate(-42deg);
+                transform-origin: 0;
+            }
+
+            span:nth-child(2) {
+                width: 0;
+            }
+
+            span:nth-child(3) {
+                transform: rotate(40deg);
+                transform-origin: 0;
+            }
+        }
+    }  
+    
+    @media (min-width:800px) {
+        &__hamburguer {
+            display: none;
+        }
+    }
+}
+
+@media (max-width:800px) {
+    .header {
+        padding: 13px 14px;
+    }
+}

@@ -1,0 +1,111 @@
+$primary-color: #181823;
+
+.cards {
+    padding: 36px 14px 0;
+
+    &__container {
+        max-width: 1248px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    @media (max-width:956px) {
+        &__container {
+            max-width: 500px;
+        }
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 32.81px;
+        color: $primary-color;
+    }
+
+    &__elements {
+        display: flex;
+        gap: 20px;
+    }
+
+    @media (max-width:956px) {
+        &__elements {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+        max-width: 296px;
+        height: 258px;
+        border-radius: 16px;
+        overflow: hidden;
+
+        &-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &-text {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            padding: 23px 17px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            color: #FFFFFF;
+            z-index: 1;
+
+            &-city {
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 32.81px;
+            }
+
+            &-price {                
+                font-weight: 700;
+
+                span:nth-child(1) {
+                    font-size: 20px;
+                    line-height: 23.44px;
+                }
+
+                span:nth-child(2) {
+                    font-size: 22px;  
+                    line-height: 25.78px;                  
+                }
+
+                span:nth-child(3) {
+                    font-size: 16px;    
+                    line-height: 18.75px;                
+                }
+            }
+        }
+
+        &-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(24, 24, 35, 0.53);
+            clip-path: polygon(100% 6%, 85% 10%, 62% 22%, 42% 38%, 25% 59%, 13% 78%, 0% 103%, 103% 103%);
+        }
+    }
+
+    &__image--big {
+        max-width: 614px;
+    }
+
+    @media (max-width:956px) {
+        &__image {
+            max-width: 500px;
+        }
+    }    
+}
